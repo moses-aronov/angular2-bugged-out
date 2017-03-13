@@ -4,6 +4,9 @@ nav{
     border-radius: 0;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .24)
 }
+.navbar-brand{
+
+}
 
 #nav-dropdown{
     color: #fff;
@@ -12,3 +15,9 @@ nav{
 .dropdown-menu{
     border-radius: 0;
 }
+
+@media (min-width: 767px) { 
+    .navbar-toggler{
+        display: none;
+    }
+ }
