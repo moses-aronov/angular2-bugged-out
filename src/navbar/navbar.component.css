@@ -21,3 +21,10 @@ nav{
         display: none;
     }
  }
+
+ @media (max-width: 576px) { 
+    .container{
+        margin-left: 0;
+        margin-right: 0;
+    }
+ }
