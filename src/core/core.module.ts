@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core'
 
 //Service
-import { FirebaseConfigService } from '../service/firebase-config.service'
+import { FirebaseConfigService } from './service/firebase-config.service'
 
 @NgModule({
     imports : [],
