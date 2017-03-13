@@ -5,7 +5,10 @@ import { Component } from '@angular/core';
     selector: 'my-app', //The name of the html element 
     template: `
     <navbar></navbar>
-    <router-outlet></router-outlet>`//Tells the router where to display the component
+    <div class="container">
+    <router-outlet></router-outlet>
+    </div>
+    `//Tells the router where to display the component
 })
 
 export class AppComponent { }
