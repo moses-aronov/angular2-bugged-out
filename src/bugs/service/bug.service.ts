@@ -18,7 +18,8 @@ export class BugService{
         return Observable.create(obs => {
             //Setup listener
             this.bugsDbRef.on('child_added', bug => {
-                obs.next(bug.val)
+                //Callback
+                obs.next(bug.val())
             },
             err => {
                 obs.throw(err)
