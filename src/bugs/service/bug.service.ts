@@ -24,7 +24,7 @@ export class BugService{
             this.bugsDbRef.on('child_added', bug => {
                 //Cast the value to bug object
                 const newBug = bug.val() as Bug;
-
+                newBug.id = bug.key;
                 //Callback
                 obs.next(newBug)
             },
@@ -45,5 +45,16 @@ export class BugService{
             createdDate: Date.now()
         })
         .catch(err  => console.error("Unable to add bug to Firebase - ", err))
+    }
+
+    updateBug(bug: Bug){
+        const currentBugRef = this.bugsDbRef.child(bug.id)
+        bug.id = null; //Remove bug id
+        bug.updatedBy="Tom Tickle";
+        bug.updatedDate = Date.now();
+
+        currentBugRef.update(bug)
+        
+
     }
 }
