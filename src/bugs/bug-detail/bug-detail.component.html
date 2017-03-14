@@ -8,7 +8,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>-->
-            <form [formGroup] = "bugForm">
+            <form [formGroup] = "bugForm" >
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group col-8" id="title-form-group">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <button class="btn btn-secondary btn-xl col-4" type="button" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-success btn-xl col-4" type="button" data-dismiss="modal">Add Bug</button>
+                    <button class="btn btn-success btn-xl col-4" type="submit" data-dismiss="modal" (click)="submitForm()">>Add Bug</button>
 
                 </div>
             </form>
