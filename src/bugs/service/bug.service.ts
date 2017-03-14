@@ -1,8 +1,12 @@
+//Modules
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs/Observable'
 
+//Services
 import { FirebaseConfigService } from '../../core/service/firebase-config.service'
 
+//Models
+import { Bug } from '../model/bug'
 
 @Injectable()
 
