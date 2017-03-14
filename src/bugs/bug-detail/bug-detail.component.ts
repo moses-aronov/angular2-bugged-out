@@ -17,7 +17,7 @@ export class BugDetailComponent implements OnInit{
     private modalId = "bugModal";
     private bugForm: FormGroup;
     //To Pupulate with existing bug
-    @Input() currentBug = new Bug(null, null, null, null, null, null, null, null, null);
+    @Input() currentBug = new Bug(null, null, 1, 1, null, null, null, null, null);
 
     constructor(private bugService: BugService){
 
@@ -27,14 +27,18 @@ export class BugDetailComponent implements OnInit{
         this.configureForm()
     }
 
-    configureForm(){
+    configureForm(bug?: Bug){
+        if(bug){
+            this.currentBug = bug
+        }
+
         this.bugForm = new FormGroup({
             // First Param = inital Value
             // Validators
-            title: new FormControl(null, Validators.required),   
-            status: new FormControl(1, Validators.required), //Set Default Value
-            severity: new FormControl(1, Validators.required),
-            description: new FormControl(null, Validators.required)
+            title: new FormControl(this.currentBug.title, Validators.required),   
+            status: new FormControl(this.currentBug.status, Validators.required), //Set Default Value
+            severity: new FormControl(this.currentBug.severity, Validators.required),
+            description: new FormControl(this.currentBug.description, Validators.required)
         })
     }
 

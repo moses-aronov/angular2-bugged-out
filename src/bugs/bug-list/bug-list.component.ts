@@ -30,7 +30,7 @@ export class BugListComponent implements OnInit {
         this.bugService.getAddedBugs()
         .subscribe(bug => {
             this.bugs.push(bug)
-            console.log(this.bugs) //TODO: REMOVE
+            
         },
         err => {
             console.error("Unable to get added bug - ", err)

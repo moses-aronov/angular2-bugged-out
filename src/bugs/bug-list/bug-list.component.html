@@ -3,7 +3,7 @@
         <h1>Logged Bugs</h1>
     </div>
     <div class="d-flex flex-column">
-        <button class="btn btn-success btn-lg" [attr.data-target]="'#' + bugDetail.modalId" data-toggle="modal">
+        <button class="btn btn-success btn-lg" [attr.data-target]="'#' + bugDetail.modalId" data-toggle="modal" (click)="bugDetail.refreshForm()">
             <i class="fa fa-plus" aria-hidden="true"></i>Add Bug
         </button>
     </div>
@@ -22,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let bug of bugs" [attr.data-target]=" '#' + bugDetail.modalId" data-toggle="modal">
+                <tr *ngFor="let bug of bugs" [attr.data-target]=" '#' + bugDetail.modalId" data-toggle="modal" (click)="bugDetail.configureForm(bug)">
                     <td>{{bug.title}}</td>
                     <td>{{bug.status}}</td>
                     <td>{{bug.severity}}</td>
