@@ -6,9 +6,9 @@ export class Bug{
         public severity: number,
         public description: string,
         public createdBy: string,
-        public createdDate: string,
+        public createdDate: number,
         public updatedBy?: string,
-        public updatedDate?: string
+        public updatedDate?: number
 
     ){
 
