@@ -20,8 +20,8 @@ export class BugDetailComponent implements OnInit{
     configureForm(){
         this.bugForm = new FormGroup({
             title: new FormControl(),
-            status: new FormControl(),
-            severity: new FormControl(),
+            status: new FormControl(1), //Set Default Value
+            severity: new FormControl(1),
             description: new FormControl()
         })
     }
