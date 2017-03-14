@@ -1,6 +1,6 @@
 //Modules
 import {Component, OnInit } from '@angular/core'
-import { FormGroup, FormControl} from '@angular/forms'
+import { FormGroup, FormControl, Validators} from '@angular/forms'
 
 @Component({
     moduleId: module.id,
@@ -19,10 +19,12 @@ export class BugDetailComponent implements OnInit{
 
     configureForm(){
         this.bugForm = new FormGroup({
-            title: new FormControl(),
-            status: new FormControl(1), //Set Default Value
-            severity: new FormControl(1),
-            description: new FormControl()
+            // First Param = inital Value
+            // Validators
+            title: new FormControl(null, Validators.required),   
+            status: new FormControl(1, Validators.required), //Set Default Value
+            severity: new FormControl(1, Validators.required),
+            description: new FormControl(null, Validators.required)
         })
     }
 
