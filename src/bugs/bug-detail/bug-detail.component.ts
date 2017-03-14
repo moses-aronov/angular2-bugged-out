@@ -8,6 +8,6 @@ import {Component } from '@angular/core'
     styleUrls: ["bug-detail.component.css"]
 })
 
-export class BugDetail{
-    
+export class BugDetailComponent{
+
 }
