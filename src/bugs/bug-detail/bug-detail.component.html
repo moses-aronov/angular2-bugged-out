@@ -1,19 +1,68 @@
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <!--<div class="modal-header">
+<div class="modal fade" [id]="modalId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <!--<div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>-->
-      <div class="modal-body">
-        Bug Detail
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Add Bug</button>
-      </div>
+            <form>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group col-8" id="title-form-group">
+                            <label for="title-field" class="sr-only">
+                                Bug title
+                            </label>
+                            <input type="text" class="form-control" id="title-field" placeholder="Bug Title">
+                        </div>
+                        <div class="form-group col" id="status-form-group">
+                            <label for="status-dropdown" class="sr-only">
+                                Status
+                            </label>
+                            <select name="" id="status-dropdown" class="form-control btn btn-primary">
+                                <option value="1">Logged</option>
+                                <option value="2">Recreated</option>
+                                <option value="3">In Progress</option>
+                                <option value="4">Fixed</option>
+                                <option value="5">Declined</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="form-group col" id="severity-form-group">
+                                <label for="severity-dropdown" class="sr-only">
+                                    Severity Dropdown
+                                </label>
+                                <select name="" id="severity-dropdown" class="form-control">
+                                    <option value="1">Severe</option>
+                                    <option value="2">Medium</option>
+                                    <option value="3">Low</option>
+                                    <option value="4">Cosmetic</option>
+                                </select>
+                            </div>
+                        </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="desc-area" class="sr-only">
+                                Description
+                            </label>
+                            <textarea class="form-control" id="desc-area" rows="10" placeholder="Type a description of your bug"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                            <button class="btn btn-secondary btn-xl col-4" type="button" data-dismiss="modal">Cancel</button>
+                
+                    
+                        <button class="btn btn-success btn-xl col-4" type="button"  data-dismiss="modal">Add Bug</button>
+                    
+                </div>
+                   
+                    
+        
+            </form>
+        </div>
     </div>
-  </div>
 </div>
