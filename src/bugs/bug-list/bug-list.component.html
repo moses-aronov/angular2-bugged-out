@@ -22,13 +22,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Some Bug</td>
-                    <td>LoggeD</td>
-                    <td>Severe</td>
-                    <td>This bug happend</td>
-                    <td>Jess</td>
-                    <td>12th July 2019</td>
+                <tr *ngFor="let bug of bugs">
+                    <td>{{bug.title}}</td>
+                    <td>{{bug.status}}</td>
+                    <td>{{bug.severity}}</td>
+                    <td>{{bug.description}}</td>
+                    <td>{{bug.createdBy}}</td>
+                    <td>{{bug.createdDate}}</td>
                 </tr>
             </tbody>
         </table>
