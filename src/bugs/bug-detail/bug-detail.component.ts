@@ -29,7 +29,18 @@ export class BugDetailComponent implements OnInit{
 
     configureForm(bug?: Bug){
         if(bug){
-            this.currentBug = bug
+            //Create a new instance to avoid collionm between form and list instance
+            this.currentBug = new Bug(
+                bug.id,
+                bug.title,
+                bug.status,
+                bug.severity,
+                bug.description,
+                bug.createdBy,
+                bug.createdDate,
+                bug.updatedBy,
+                bug.updatedDate
+            )
         }
 
         this.bugForm = new FormGroup({
