@@ -8,20 +8,20 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>-->
-            <form>
+            <form [formGroup] = "bugForm">
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group col-8" id="title-form-group">
                             <label for="title-field" class="sr-only">
                                 Bug title
                             </label>
-                            <input type="text" class="form-control" id="title-field" placeholder="Bug Title">
+                            <input type="text" class="form-control" id="title-field" placeholder="Bug Title" formControlName="title">
                         </div>
                         <div class="form-group col" id="status-form-group">
                             <label for="status-dropdown" class="sr-only">
                                 Status
                             </label>
-                            <select name="" id="status-dropdown" class="form-control btn btn-primary">
+                            <select name="" id="status-dropdown" class="form-control btn btn-primary" formControlName="status">
                                 <option value="1">Logged</option>
                                 <option value="2">Recreated</option>
                                 <option value="3">In Progress</option>
@@ -35,7 +35,7 @@
                             <label for="severity-dropdown" class="sr-only">
                                     Severity Dropdown
                                 </label>
-                            <select name="" id="severity-dropdown" class="form-control">
+                            <select name="" id="severity-dropdown" class="form-control" formControlName="severity">
                                     <option value="1">Severe</option>
                                     <option value="2">Medium</option>
                                     <option value="3">Low</option>
@@ -48,7 +48,7 @@
                             <label for="desc-area" class="sr-only">
                                 Description
                             </label>
-                            <textarea class="form-control" id="desc-area" rows="10" placeholder="Type a description of your bug"></textarea>
+                            <textarea class="form-control" id="desc-area" rows="10" placeholder="Type a description of your bug"  formControlName="description"></textarea>
                         </div>
                     </div>
                 </div>
