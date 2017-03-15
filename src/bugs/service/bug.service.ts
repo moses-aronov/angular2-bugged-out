@@ -67,7 +67,12 @@ export class BugService{
         bug.updatedDate = Date.now();
 
         currentBugRef.update(bug)
-        
-
+    }
+    
+    deleteBug(bug : Bug){
+        const currentBugRef = this.bugsDbRef.child(bug.id)
+        currentBugRef.remove().catch(error => {
+            console.error("Unable to delete bug on Firebase - ", error)
+        })
     }
 }

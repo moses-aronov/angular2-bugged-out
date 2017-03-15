@@ -91,7 +91,7 @@ export class BugDetailComponent implements OnInit{
 
     deleteBug(event: Event, bug : Bug){
         event.stopPropagation()
-        console.log(bug)
+        this.bugService.deleteBug(bug)
 
     }
     refreshForm(){
