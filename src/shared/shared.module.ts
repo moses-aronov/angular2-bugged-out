@@ -1,13 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'
+
+//Pipes
+import {StatusPipe } from './pipe/status.pipe'
+import { SeverityPipe } from './pipe/severity.pipe'
 //Boiler Plate NgModule
 
 @NgModule(
     {
         imports: [ CommonModule ],
-        declarations: [ ],
+        declarations: [
+            StatusPipe,
+            SeverityPipe
+         ],
         bootstrap: [ ],
-        exports: [ CommonModule ]
+        exports: [ 
+            CommonModule,
+            StatusPipe,
+            SeverityPipe
+         ]
     }
 )
 
