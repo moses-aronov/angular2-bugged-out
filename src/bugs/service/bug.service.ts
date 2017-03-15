@@ -47,6 +47,19 @@ export class BugService{
         })
     }
 
+    deleteListener(): Observable<any>{
+        return Observable.create(obs => {
+            this.bugsDbRef.on("child_removed", bug => {
+                const removedBug = bug.val() as Bug;
+                removedBug.id = bug.key;
+                obs.next(removedBug)
+            },
+            err => {
+                obs.throw(err)
+            })
+        })
+    }
+
     addBug(bug: Bug){
         const newBugRef = this.bugsDbRef.push()
         newBugRef.set({
