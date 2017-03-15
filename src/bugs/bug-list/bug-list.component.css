@@ -25,3 +25,11 @@ tbody > tr{
 tbody > tr:hover{
     background-color: #ccc;
 }
+
+tbody > tr:hover .deleteButton{
+    visibility: visible
+}
+
+tbody > tr .deleteButton{
+    visibility: hidden;
+}
