@@ -18,3 +18,10 @@ td {
 i{
     padding-right: .5rem;
 }
+tbody > tr{
+    cursor: pointer;
+}
+
+tbody > tr:hover{
+    background-color: #ccc;
+}

@@ -1,5 +1,5 @@
 //Modules
-import {Component, OnInit, Input } from '@angular/core'
+import {Component, OnInit } from '@angular/core'
 import { FormGroup, FormControl, Validators} from '@angular/forms'
 
 //Models
@@ -28,7 +28,7 @@ export class BugDetailComponent implements OnInit{
 
 
     //To Pupulate with existing bug
-    @Input() currentBug = new Bug(null, null, this.statuses.Logged, this.severities.Severe, null, null, null, null, null);
+    private currentBug = new Bug(null, null, this.statuses.Logged, this.severities.Severe, null, null, null, null, null);
 
     constructor(private bugService: BugService){
 
