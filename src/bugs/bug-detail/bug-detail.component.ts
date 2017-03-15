@@ -6,6 +6,10 @@ import { FormGroup, FormControl, Validators} from '@angular/forms'
 import {Bug } from '../model/bug' 
 //Services
 import {BugService} from '../service/bug.service'
+
+//Enums
+import { STATUS, SEVERITY } from '../../shared/constants/constants'
+
 @Component({
     moduleId: module.id,
     selector: 'bug-detail',
@@ -16,8 +20,11 @@ import {BugService} from '../service/bug.service'
 export class BugDetailComponent implements OnInit{
     private modalId = "bugModal";
     private bugForm: FormGroup;
+    private statuses = STATUS
+    private severities = SEVERITY
+
     //To Pupulate with existing bug
-    @Input() currentBug = new Bug(null, null, 1, 1, null, null, null, null, null);
+    @Input() currentBug = new Bug(null, null, this.statuses.Logged, this.severities.Severe, null, null, null, null, null);
 
     constructor(private bugService: BugService){
 
@@ -78,8 +85,8 @@ export class BugDetailComponent implements OnInit{
 
     refreshForm(){
         this.bugForm.reset({
-            status: 1,
-            severity: 1
+            status: this.statuses.Logged,
+            severity: this.severities.Severe
         })
     }
 }
