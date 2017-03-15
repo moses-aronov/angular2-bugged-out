@@ -78,7 +78,6 @@ export class BugDetailComponent implements OnInit{
         } else {
             this.addBug()
         }
-        this.refreshForm()
     }
 
     addBug(){
