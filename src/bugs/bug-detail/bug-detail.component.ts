@@ -23,6 +23,10 @@ export class BugDetailComponent implements OnInit{
     private statuses = STATUS
     private severities = SEVERITY
 
+    private statusArr : String[] = []
+    private severityArr : String[] = []
+
+
     //To Pupulate with existing bug
     @Input() currentBug = new Bug(null, null, this.statuses.Logged, this.severities.Severe, null, null, null, null, null);
 
@@ -31,6 +35,9 @@ export class BugDetailComponent implements OnInit{
     }
 
     ngOnInit(){
+        //Extract array of number that relate to Enums
+        this.statusArr = Object.keys(this.statuses).filter(Number);
+        this.severityArr = Object.keys(this.severities).filter(Number);
         this.configureForm()
     }
 

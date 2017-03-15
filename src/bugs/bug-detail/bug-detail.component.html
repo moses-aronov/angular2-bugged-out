@@ -22,11 +22,7 @@
                                 Status
                             </label>
                             <select name="" id="status-dropdown" class="form-control btn btn-primary" formControlName="status">
-                                <option value="1">Logged</option>
-                                <option value="2">Recreated</option>
-                                <option value="3">In Progress</option>
-                                <option value="4">Fixed</option>
-                                <option value="5">Declined</option>
+                                <option *ngFor="let status of statusArr" [value]="status">{{statuses[status]}}</option>
                             </select>
                         </div>
                     </div>
@@ -36,10 +32,7 @@
                                     Severity Dropdown
                                 </label>
                             <select name="" id="severity-dropdown" class="form-control" formControlName="severity">
-                                    <option value="1">Severe</option>
-                                    <option value="2">Medium</option>
-                                    <option value="3">Low</option>
-                                    <option value="4">Cosmetic</option>
+                                    <option *ngFor="let severity of severityArr" [value]="severity">{{severities[severity]}}</option>
                                 </select>
                         </div>
                     </div>
